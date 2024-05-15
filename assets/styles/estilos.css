@@ -18,9 +18,9 @@
     height: 600px; 
 
 }
-nav{
+/* nav{
     text-align: right;
-    padding: 15px 40px 0 0;
+    padding
     background-color: rgba(105, 181, 248, 0.827);
     
 }
@@ -35,7 +35,45 @@ nav > a{
 }
 nav > a:hover{
     text-decoration: underline  ;
-}
+} */
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333; 
+    padding: 10px 0; 
+    margin-bottom: 0.1%;
+    background: -webkit-linear-gradient(to right, #E7E9BB, #403B4A);  
+    background: linear-gradient(to right, hsla(208, 87%, 79%, 0.827), hsla(263, 61%, 64%, 0.587),hsla(263, 9%, 39%, 0.649)),;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: color 0.3s ease; 
+  }
+  
+  nav a:hover {
+    color: #0dcaf0; /* Color del texto al pasar el ratón */
+  }
+
+  @media screen and (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      padding: 10%;
+    
+    }
+  
+    nav a {
+      margin-bottom: 10px; 
+    }
+
+    footer{
+        flex-direction: column;
+        
+       
+    }
+  }
 .ola{
     position: absolute;
     bottom: 0;
@@ -79,6 +117,7 @@ nav > a:hover{
     padding: 0 50px;
     top: 440px;
     color: rgb(6, 6, 6) ;
+   
 } 
  .texto  h1{
     font-size: 45px;
@@ -90,7 +129,32 @@ nav > a:hover{
     border-radius: 70px;
     
 }
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.seccion-Bienvenida {
+    display: flex; 
+  }
   
+  .seccion-Bienvenida > div {
+    flex: 1; 
+    padding-right: 20px;
+    padding: 2%; /* Agrega un espacio a la derecha del contenido */
+  }
+  
+  .seccion-Bienvenida img {
+    max-width: 40%;
+    padding: 2%; /* Ajusta el tamaño máximo de la imagen al contenedor */
+  }
+.iconito{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
 @keyframes slide {
     25%{margin-left: 0;}
     45%{margin-left: 0;}
@@ -104,3 +168,27 @@ nav > a:hover{
     /* 75%{margin-left: -250%;}
     100%{margin-left: -250%;} */ 
 }  
+
+
+
+footer {
+    display: flex;
+
+    background-color: #ebeff3;
+    padding: 20px;
+    /* text-align: center; */
+  
+    bottom: 0;
+    /* width: 100%; */
+    font-family: Arial, sans-serif; 
+    /* cursor: pointer; */ 
+    font-size: 14px;
+
+    justify-content: space-around;
+   
+}
+
+/* footer:hover {
+    color: #077dac; 
+    font-size: 16px;
+} */
