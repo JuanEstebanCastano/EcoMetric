@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Análisis Ambiental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #e6f7ff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            padding: 10px 0;
+            margin-bottom: 0.1%;
+            background: -webkit-linear-gradient(to right, #E7E9BB, #403B4A);
+            background: linear-gradient(to right, hsla(208, 87%, 79%, 0.827), hsla(263, 61%, 64%, 0.587), hsla(263, 9%, 39%, 0.649)), ;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #0dcaf0;
+            /* Color del texto al pasar el ratón */
+        }
+
+        .grafico {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .grafico img {
+            max-width: 400px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .tabla {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .imagen-ampliada {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .imagen-ampliada img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            cursor: pointer;
+        }
+
+        footer {
+            display: flex;
+
+            background-color: #ebeff3;
+            padding: 20px;
+            /* text-align: center; */
+
+            bottom: 0;
+            /* width: 100%; */
+            font-family: Arial, sans-serif;
+            /* cursor: pointer; */
+            font-size: 14px;
+
+            justify-content: space-around;
+
+        }
+
+        /*  */
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const imagenes = document.querySelectorAll('.grafico img');
+            const contenedorImagenAmpliada = document.querySelector('.imagen-ampliada');
+            const imagenAmpliada = contenedorImagenAmpliada.querySelector('img');
+
+            // Evento clic en una imagen para ampliarla
+            imagenes.forEach(imagen => {
+                imagen.addEventListener('click', function () {
+                    imagenAmpliada.src = this.src;
+                    contenedorImagenAmpliada.style.display = 'flex';
+                });
+            });
+
+            // Evento clic fuera de la imagen ampliada para cerrarla
+            contenedorImagenAmpliada.addEventListener('click', function (event) {
+                if (event.target === this) {
+                    contenedorImagenAmpliada.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="img-fluid">
+        <a href="index.html">Inicio</a>
+        <a href="">Sobre Nosotros</a>
+
+
+    </nav>
+
+    <h1 style="text-align: center;">Resultados de Análisis Ambiental</h1>
+
+    <table>
+        <tr>
+            <td class="grafico">
+                <div>
+                    <h2>Calidad del Aire</h2>
+                    <img src="./assets/img/calidadDeAire.png" alt="Calidad de Aire">
+                </div>
+                <div class="tabla">
+                    <h3>Tabla de Datos</h3>
+                    <!-- Incluir tabla de calidad del aire -->
+                    <object type="text/html" data="./tables/datosAire.html" style="width:100%; height:500px;">
+                        Tabla de Calidad del Aire no se puede mostrar
+                    </object>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="grafico">
+                <div>
+                    <h2>Ruido Ambiental</h2>
+                    <img src="./assets/img/ruidoAmbiental.png" alt="Ruido Ambiental">
+                </div>
+                <div class="tabla">
+                    <h3>Tabla de Datos</h3>
+                    <!-- Incluir tabla de ruido ambiental -->
+                    <object type="text/html" data="./tables/datosRuido.html" style="width:100%; height:500px;">
+                        Tabla de Ruido Ambiental no se puede mostrar
+                    </object>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="grafico">
+                <div>
+                    <h2>Gestión de Residuos</h2>
+                    <img src="./assets/img/gestionResiduos.png" alt="Gestión de Residuos">
+                </div>
+                <div class="tabla">
+                    <h3>Tabla de Datos</h3>
+                    <!-- Incluir tabla de gestión de residuos -->
+                    <object type="text/html" data="./tables/datosGestionResiduos.html"
+                        style="width:100%; height:500px;">
+                        Tabla de Gestión de Residuos no se puede mostrar
+                    </object>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="grafico">
+                <div>
+                    <h2>Consumo de Agua</h2>
+                    <img src="./assets/img/consumoAgua.png" alt="Consumo de Agua">
+                </div>
+                <div class="tabla">
+                    <h3>Tabla de Datos</h3>
+                    <!-- Incluir tabla de consumo de agua -->
+                    <object type="text/html" data="./tables/datosConsumoAgua.html" style="width:100%; height:500px;">
+                        Tabla de Consumo de Agua no se puede mostrar
+                    </object>
+                </div>
+            </td>
+        </tr>
+        <!-- Agrega más filas <tr> según la cantidad de gráficos que tengas -->
+    </table>
+
+    <div class="imagen-ampliada">
+        <img src="" alt="Imagen Ampliada">
+    </div>
+
+    <footer ">
+
+        <div class=" nombres">
+        <p> <strong>Estudiantes:</strong></p>
+        <p>Juan Esteban Castaño</p>
+        <p>Juan José Restrepo Correa</p>
+        <p>Liseth Dayana Moreno Mosquera</p>
+        </div>
+
+        <div class="materia">
+            <p> <strong>Area:</strong> </p>
+            <p>Nuevas Tecnologías</p>
+        </div>
+        <div class="profe">
+            <p><strong>Docente:</strong></p>
+            <p>Juan José Gallego</p>
+        </div>
+
+
+    </footer>
+
+</body>
+
+</html>

@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\bockap\Escritorio\palataformapiton\EcoMetric\modules
+set VIRTUAL_ENV=C:\Users\juanj\Desktop\Nueva carpeta (6)\palataformapiton\palataformapiton\EcoMetric\modules
 
 if not defined PROMPT set PROMPT=$P$G
 

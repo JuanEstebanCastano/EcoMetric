@@ -7,7 +7,7 @@ def generarDatosCalidadAire():
         nombre = random.choice(["Ana Perez", "Jose Jimenez", "Marcolo Agachateconocelo", "Karen Andrea", "Jesus Perez"])
         comuna = random.randint(1, 14)
         ica = random.randint(10, 50)
-        fecha = random.choice(["2024-02-12", "2024-02-13", "2024-02-14"])
+        fecha = random.choice(["2024-02-12", "2024-02-13", "sin"])
         correo = random.choice(["correo@correo.com", "correo1@correo.com", "correo2@correo.com", "correo4@correo.com", "correo5@correo.com"])
         encuesta = [nombre, comuna, ica, fecha, correo]
         listaDatos.append(encuesta)
@@ -37,7 +37,7 @@ def generarDatosSiembraArboles():
         listaDatos.append(encuesta)
     return listaDatos
 
-def generarDatosGestionResiduos():
+""" def generarDatosConsumoAgua():
     listaDatos = []
     for i in range(1000):
         comuna = random.randint(1, 14)
@@ -49,8 +49,22 @@ def generarDatosGestionResiduos():
         encuesta = [comuna, nombre, consumoAgua, consumoAcueducto, fecha, correo]
         listaDatos.append(encuesta)
     return listaDatos
-
+ """
 def generarDatosConsumoAgua():
+    listaDatos = []
+    for i in range(1000):
+        comuna = random.randint(1, 14)
+        nombre = random.choice(["Ana Perez", "Jose Jimenez", "Marcolo Agachateconocelo", "Karen Andrea", "Jesus Perez"])
+        origenAgua = random.choice(["San Sebastián de Palmitas", "San Cristóbal", "Altavista", "San Antonio de Prado"])
+        fecha = random.choice(["2024-02-12", "2024-02-13", "2024-02-14"])
+        correo = random.choice(["correo@correo.com", "correo1@correo.com", "correo2@correo.com", "correo4@correo.com", "correo5@correo.com"])
+        consumoAgua = random.uniform(10, 100)  # Consumo de agua en litros
+        costoConsumo = random.uniform(20, 200)  # Costo de consumo de agua en USD
+        encuesta = [comuna, nombre, origenAgua, fecha, correo, consumoAgua, costoConsumo]
+        listaDatos.append(encuesta)
+    return listaDatos
+ 
+def generarDatosGestionResiduos():
     listaDatos = []
     for i in range(1000):
         comuna = random.randint(1, 14)
